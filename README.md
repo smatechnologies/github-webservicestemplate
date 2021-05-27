@@ -14,7 +14,7 @@ Variables -
 
 "Step 1" is an example of calling an organization and returning ALL repositories (such as getting all the repositories/examples from our SMA Innovation Lab).
 
-"Step 2/3" are examples of getting information from a specific repository and then downloading a file from one of its releases.
+"Step 2/3" are examples of getting information from a specific repository and then downloading a file from one of its releases.  In the "Response" on "Step 3", you can specify where the output file from github should go.  This output file could then be executed on a subsequent OpCon job.
 
 # Disclaimer
 No Support and No Warranty are provided by SMA Technologies for this project and related material. The use of this project's files is on your own risk.
