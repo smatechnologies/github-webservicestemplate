@@ -1,0 +1,70 @@
+{
+  "templateid" : "GITHUB",
+  "steps" : [ {
+    "function" : "GET",
+    "url" : "https://api.github.com/orgs/@org/repos",
+    "proxyServer" : null,
+    "request" : {
+      "headers" : [ ],
+      "contentType" : "application/json",
+      "body" : null,
+      "fileName" : null
+    },
+    "response" : {
+      "contentType" : "application/json",
+      "variables" : [ ],
+      "ignoreResult" : false,
+      "stepCompletionCode" : 200,
+      "responseDataCheck" : null,
+      "fileName" : null
+    }
+  }, {
+    "function" : "GET",
+    "url" : "https://api.github.com/repos/@org/@repo/releases",
+    "proxyServer" : null,
+    "request" : {
+      "headers" : [ ],
+      "contentType" : "application/json",
+      "body" : null,
+      "fileName" : null
+    },
+    "response" : {
+      "contentType" : "application/json",
+      "variables" : [ {
+        "name" : "@downloadurl",
+        "value" : "$[0].assets[0].browser_download_url"
+      } ],
+      "ignoreResult" : false,
+      "stepCompletionCode" : 200,
+      "responseDataCheck" : null,
+      "fileName" : null
+    }
+  }, {
+    "function" : "GET",
+    "url" : "@downloadurl",
+    "proxyServer" : null,
+    "request" : {
+      "headers" : [ ],
+      "contentType" : "application/json",
+      "body" : null,
+      "fileName" : null
+    },
+    "response" : {
+      "contentType" : "application/json",
+      "variables" : [ ],
+      "ignoreResult" : false,
+      "stepCompletionCode" : 200,
+      "responseDataCheck" : null,
+      "fileName" : "[[DOWNLOAD_PATH]]\\filename.extension"
+    }
+  } ],
+  "variables" : [ {
+    "name" : "@org",
+    "value" : "??????"
+  }, {
+    "name" : "@repo",
+    "value" : "??????"
+  } ],
+  "environmentVariables" : [ ],
+  "properties" : [ ]
+}
